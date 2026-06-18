@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://xythh0u75mgb"]
+
+[ext_resource type="Texture2D" uid="uid://bsrdshx8m3sfh" path="res://assets/branding/m2m_logo.png" id="1_b3bc3"]
+[ext_resource type="Texture2D" uid="uid://dwvnfbl5jcmm3" path="res://assets/branding/mesh2motionalpha_logo.png" id="2_g6l6n"]
+[ext_resource type="Script" uid="uid://c6xeyadm5ae0l" path="res://UI.gd" id="2_uiscript"]
+
+[node name="Ui" type="Control" unique_id=1455904254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_uiscript")
+
+[node name="MainMenu" type="Control" parent="." unique_id=378814108]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="MainMenu" unique_id=223020328]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="TitleLogo" type="TextureRect" parent="MainMenu" unique_id=1554545071]
+top_level = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -285.41663
+offset_top = 286.0
+offset_right = 285.41663
+offset_bottom = 361.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("2_g6l6n")
+expand_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MainMenu" unique_id=767570987]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -91.0
+offset_right = 200.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="MainMenu/VBox" unique_id=1813265556]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AnimationsButton" type="Button" parent="MainMenu/VBox" unique_id=1713150501]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Animations List"
+
+[node name="PlaygroundButton" type="Button" parent="MainMenu/VBox" unique_id=119866496]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Playground"
+
+[node name="ExitButton" type="Button" parent="MainMenu/VBox" unique_id=792780882]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[node name="Panel" type="Panel" parent="." unique_id=954550283]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 692.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=2081551369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.10980392, 0.20392157, 0.27058825, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1178164751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Container" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1436152554]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/Container" unique_id=1170961200]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 26
+text = "Animations List:"
+
+[node name="AnimationsRows" type="ScrollContainer" parent="Panel/MarginContainer/Container" unique_id=792167391]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AnimationsGrid" type="GridContainer" parent="Panel/MarginContainer/Container/AnimationsRows" unique_id=673104907]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Overlay" type="Control" parent="." unique_id=1304508688]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Logo" type="TextureRect" parent="Overlay" unique_id=270593999]
+unique_name_in_owner = true
+top_level = true
+layout_mode = 1
+offset_right = 75.0
+offset_bottom = 75.0
+texture = ExtResource("1_b3bc3")
+expand_mode = 1
+
+[node name="ControlsPanel" type="Panel" parent="Overlay" unique_id=1835784937]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -168.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Overlay/ControlsPanel" unique_id=1932246985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ControlsVBox" type="VBoxContainer" parent="Overlay/ControlsPanel/MarginContainer" unique_id=904304612]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2065638088]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1519032558]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4

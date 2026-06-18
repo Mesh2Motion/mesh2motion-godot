@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dt7gq27yhao1w"]
+
+[ext_resource type="PackedScene" uid="uid://cbxtmsjgue0b0" path="res://Human.tscn" id="1_7avl8"]
+[ext_resource type="Script" uid="uid://cgn32dd2onqih" path="res://camera_follow.gd" id="2_cam"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wvk6s"]
+size = Vector2(16, 8)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bp6kd"]
+size = Vector2(16, 16)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_floor"]
+
+[node name="Scenary" type="Node3D" unique_id=1552428404]
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=405247786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -8)
+mesh = SubResource("PlaneMesh_wvk6s")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=646971150]
+mesh = SubResource("PlaneMesh_bp6kd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=652246818]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=417020708]
+shape = SubResource("WorldBoundaryShape3D_floor")
+
+[node name="CameraAnchor" type="Node3D" parent="." unique_id=1379640038]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraAnchor" unique_id=530444653]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 1.7999991, 1.7999995)
+script = ExtResource("2_cam")
+
+[node name="Human" parent="." unique_id=522836558 instance=ExtResource("1_7avl8")]
+unique_name_in_owner = true

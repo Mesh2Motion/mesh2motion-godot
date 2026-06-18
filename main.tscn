@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://g1k8q6wd81s3"]
+
+[ext_resource type="PackedScene" uid="uid://dt7gq27yhao1w" path="res://Scenary.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://873xvra1wqet" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://xythh0u75mgb" path="res://UI.tscn" id="2_0xm2m"]
+
+[sub_resource type="Environment" id="Environment_8nfvd"]
+
+[node name="Main" type="Node3D" unique_id=237850945]
+script = ExtResource("1_h2yge")
+
+[node name="Environment" type="Node" parent="." unique_id=1482713163]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=2005448021]
+environment = SubResource("Environment_8nfvd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1477485030]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 5.8, 0)
+shadow_enabled = true
+
+[node name="Scenary" parent="." unique_id=1552428404 instance=ExtResource("1_0xm2m")]
+
+[node name="Ui" parent="." unique_id=1455904254 instance=ExtResource("2_0xm2m")]
